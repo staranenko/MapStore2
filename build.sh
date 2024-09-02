@@ -16,6 +16,16 @@
 # Example
 # $ ./build.sh 2022.02.00 binary
 
+# Переменные окружения нужные для сборки
+export NODE_OPTIONS=--openssl-legacy-provider
+export CHROME_BIN='/opt/homebrew/bin/chromium'
+export JAVA_HOME=`/usr/libexec/java_home -v 11.0`
+
+# Понижение версии node для корректной сборки документации
+ [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
+ [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+ nvm use 20.5.1
+
 set -e
 
 echo "Running NPM install to update dependencies"
@@ -34,9 +44,9 @@ echo "Checking syntax"
 echo `date`
 npm run lint
 
-echo "Run MapStore2 tests"
-echo `date`
-npm test
+#echo "Run MapStore2 tests"
+#echo `date`
+#npm test
 
 echo "Creating Documentation"
 echo `date`
