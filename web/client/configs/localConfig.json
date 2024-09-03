@@ -79,13 +79,25 @@
                 "isNew": true,
                 "autoload": false
             },
-            "selectedService": "gs_stable_csw",
+            "selectedService": "gs_sgugit_wms",
             "services": {
+              "gs_sgugit_wms": {
+                "url": "http://mapstore.ssga.local/geoserver/wms",
+                "type": "wms",
+                "title": "SGUGiT GeoServer WMS",
+                "autoload": true
+              },
+              "gs_sgugit_wfs": {
+                "url": "http://mapstore.ssga.local/geoserver/wfs",
+                "type": "wfs",
+                "title": "SGUGiT GeoServer WFS",
+                "autoload": true
+              },
               "gs_stable_csw": {
                 "url": "https://gs-stable.geo-solutions.it/geoserver/csw",
                 "type": "csw",
                 "title": "GeoSolutions GeoServer CSW",
-                "autoload": true
+                "autoload": false
               },
               "gs_stable_wms": {
                 "url": "https://gs-stable.geo-solutions.it/geoserver/wms",
@@ -235,25 +247,14 @@
         },
         "locales": {
           "supportedLocales": {
-            "it": {
-              "code": "it-IT",
-              "description": "Italiano"
-            },
             "en": {
               "code": "en-US",
               "description": "English"
             },
-            "fr": {
-              "code": "fr-FR",
-              "description": "Français"
-            },
-            "de": {
-              "code": "de-DE",
-              "description": "Deutsch"
-            },
-            "es": {
-              "code": "es-ES",
-              "description": "Español"
+
+            "ru": {
+              "code": "ru-RU",
+              "description": "Русский"
             }
           }
         }
@@ -821,8 +822,18 @@
           "Permalink",
           {"name": "DashboardEditor",
             "cfg": {
-              "selectedService": "GeoSolutions GeoServer CSW",
+              "selectedService": "gs_sgugit_wms",
               "services": {
+                "gs_sgugit_wms": {
+                  "url": "http://mapstore.ssga.local/geoserver/wms",
+                  "type": "wms",
+                  "title": "SGUGiT GeoServer WMS"
+                },
+                "gs_sgugit_wfs": {
+                  "url": "http://mapstore.ssga.local/geoserver/wfs",
+                  "type": "wfs",
+                  "title": "SGUGiT GeoServer WFS"
+                },
                 "GeoSolutions GeoServer CSW": {
                   "url": "https://gs-stable.geo-solutions.it/geoserver/csw",
                   "type": "csw",

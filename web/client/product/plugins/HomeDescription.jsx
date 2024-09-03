@@ -28,7 +28,7 @@ class HomeDescription extends React.Component {
     };
 
     static defaultProps = {
-        name: 'MapStore',
+        name: <HTML msgId="home.caption"/>,
         className: 'ms-home-description',
         style: {}
     };

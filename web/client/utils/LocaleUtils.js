@@ -26,8 +26,9 @@ const sv = require('react-intl/locale-data/sv');
 const sk = require('react-intl/locale-data/sk');
 const da = require('react-intl/locale-data/da');
 const is = require('react-intl/locale-data/is');
+const ru = require('react-intl/locale-data/ru');
 
-addLocaleData([...en, ...it, ...fr, ...de, ...es, ...nl, ...zh, ...hr, ...pt, ...vi, ...fi, ...sv, ...sk, ...da, ...is]);
+addLocaleData([...en, ...it, ...fr, ...de, ...es, ...nl, ...zh, ...hr, ...pt, ...vi, ...fi, ...sv, ...sk, ...da, ...is, ...ru]);
 
 /*
  * it, en, fr, de, es are the default locales and it is preferrable to customize them via configuration.
@@ -93,6 +94,10 @@ let supportedLocales = {
     "is": {
         code: "is-IS",
         description: "Islensku"
+    },
+    "ru": {
+        code: "ru-RU",
+        description: "Русский"
     }
 };
 export const DATE_FORMATS = {
@@ -104,7 +109,8 @@ export const DATE_FORMATS = {
     "hr-HR": "DD/MM/YYYY",
     "pt-PT": "DD/MM/YYYY",
     "vi-VN": "DD/MM/YYYY",
-    "fi-FI": "DD/MM/YYYY"
+    "fi-FI": "DD/MM/YYYY",
+    "ru-RU": "YYYY/MM/DD"
 };
 
 let errorParser = {};
@@ -130,7 +136,8 @@ export const ensureIntl = (callback) => {
         'intl/locale-data/jsonp/sv.js',
         'intl/locale-data/jsonp/sk.js',
         'intl/locale-data/jsonp/da.js',
-        'intl/locale-data/jsonp/is.js'
+        'intl/locale-data/jsonp/is.js',
+        'intl/locale-data/jsonp/ru.js'
     ], (require) => {
         global.Intl = require('intl');
         require('intl/locale-data/jsonp/en.js');
@@ -148,6 +155,7 @@ export const ensureIntl = (callback) => {
         require('intl/locale-data/jsonp/sk.js');
         require('intl/locale-data/jsonp/da.js');
         require('intl/locale-data/jsonp/is.js');
+        require('intl/locale-data/jsonp/ru.js');
         if (callback) {
             callback();
         }
